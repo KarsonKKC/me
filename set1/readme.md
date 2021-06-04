@@ -1,1 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+Print("This first class is very clear, although there were quite a lot of errors but I managed to overcome them. I personally like the first class and I'm excited for the rest of the classes")
