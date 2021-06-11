@@ -18,7 +18,7 @@ replace None with the actual answer.
 
 
 def add_1(a_number):
-    """Return a number that is 1 bigger than number given.
+    """Return a number that is 1 bigger than number given. 
 
     This isn't a trick!
 
