@@ -232,7 +232,16 @@ def loops_7():
         [' ', ' ', ' ', '*', '*', '*', ' ', ' ', ' '],
         [' ', ' ', '*', '*', '*', '*', '*', ' ', ' '],
         [' ', '*', '*', '*', '*', '*', '*', '*', ' '],
-        ['*', '*', '*', '*', '*', '*', '*', '*', '*']
+        ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+    ]
+
+    [
+        [
+        [' ', ' ', ' ', ' ', '1', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', '1', '2', '3', ' ', ' ', ' '],
+        [' ', ' ', '1', '2', '3', '4', '5', ' ', ' '],
+        [' ', '1', '2', '3', '4', '5', '6', '7', ' '],
+        ['1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     or in more simple terms:
             *
@@ -244,7 +253,17 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    return None
+    pyramid_outside = []
+    for y in range(5):
+        inner_pyramid = []
+        for x in range(9):
+            if abs(x - 4) <= y:
+                inner_pyramid.append("*")
+            else:
+                inner_pyramid.append(" ")
+        pyramid_outside.append(inner_pyramid)
+
+    return pyramid_outside
 
 
 def little_printer(some_kind_of_list, exercise_name):
