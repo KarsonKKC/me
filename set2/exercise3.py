@@ -148,7 +148,14 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    return None
+    numbers = []
+    for i in range(10):
+        list = []
+        for j in range(10):
+            list.append(str(j))
+        numbers.append(list)
+
+    return numbers
 
 
 def loops_5():
@@ -175,7 +182,15 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
-    return None
+
+    numbers = []
+    for i in range(10):
+        coordinates = []
+        for j in range(5):
+            coordinates.append(f"(i{i}, j{j})")
+        numbers.append(coordinates)
+
+    return numbers
 
 
 def loops_6():
@@ -198,7 +213,14 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    return None
+    numbers = []
+    for i in range(10):
+        list = []
+        for j in range(10):
+            list.append(str(j))
+        numbers.append(list)
+
+    return numbers
 
 
 def loops_7():
