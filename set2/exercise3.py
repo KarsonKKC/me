@@ -92,14 +92,12 @@ def loops_2():
           ]
     """
     star = []
-    noofstars = []
-
-    for Starings in range(0, 10):
-        star.append("*")
-    for Starfruits in range(0, 10):
-        noofstars.append(star)
-
-    return noofstars
+    for starings in range(10):
+        noofstar = []
+        for starfruits in range(10):
+            noofstar.append("*")
+        star.append(noofstar)
+    return star
 
 
 def loops_3():
@@ -123,8 +121,14 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
+    numbers = []
+    for i in range(10):
+        list = []
+        for j in range(10):
+            list.append(str(i))
+        numbers.append(list)
 
-    return None
+    return numbers
 
 
 def loops_4():
