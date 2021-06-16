@@ -216,7 +216,7 @@ def loops_6():
     numbers = []
     for i in range(10):
         list = []
-        for j in range(10):
+        for j in range(i + 1):
             list.append(str(j))
         numbers.append(list)
 
