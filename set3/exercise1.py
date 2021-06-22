@@ -72,8 +72,8 @@ def not_number_rejector(message):
     while True:
         try:
             x = int(input("Input anything "))
-        except ValueError:
-            print("Please try again")
+        except Exception as e:
+            print(f"Please try again {e}")
             continue
         else:
             return x
@@ -87,7 +87,16 @@ def super_asker(low, high):
     Try to call at least one of the other functions to minimise the
     amount of code.
     """
-    return None
+
+    while True:
+        try:
+            x = int(input("Please input a number"))
+            if low <= x <= high:
+                return x
+            else:
+                print("Please try again")
+        except Exception as e:
+            print(f"Please try again {e}")
 
 
 if __name__ == "__main__":
