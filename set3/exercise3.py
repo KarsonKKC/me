@@ -5,6 +5,16 @@ Steps on the way to making your own guessing game.
 
 import random
 
+def super_asker(low, high):
+    while True:
+        try:
+            x = int(input("Please input a number"))
+            if low <= x <= high:
+                return x
+            else:
+                print("Please try again")
+        except Exception as e:
+            print(f"Please try again {e}")
 
 def advancedGuessingGame():
     """Play a guessing game with a user.
@@ -27,32 +37,9 @@ def advancedGuessingGame():
     """
     print("\nWelcome to the guessing game!")
     print("This game will ask for two numbers, What number is in your mind?")
-    try:
-        while True:
-            lower_number = int(input("Enter a low number: "))
-            high_number = int(input("Now, Enter a high number: "))
-    except Exception:
-        print("You have to enter a number!")
-    print(f"OK then, a number between {lower_number} and {high_number}?")
-    lower_number = int(lower_number)
-    high_number = int(high_number)
-
-    real_number = random.randint(lower_number, high_number)
-
-    guessed = False
-
-    while not guessed:
-        guess_number = int(input("Guess a number: "))
-        print(f"You guessed, {guess_number},")
-        if guess_number == real_number:
-            print(f"You got it!! It was {real_number}!")
-            guessed = True
-        elif lower_number > guess_number > high_number:
-            print("Stick to your the boundary!")
-        elif guess_number < real_number:
-            print("Too small, try again!")
-        else:
-            print("Too big, try again!")
+    high = super_asker(0, 100)
+    low = super_asker(0, high)
+    
     return "You got it!"
     # the tests are looking for the exact string "You got it!". Don't modify that!
 
