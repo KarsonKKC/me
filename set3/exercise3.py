@@ -39,6 +39,22 @@ def super_asker(low, high):
                 print("Please try again")
         except Exception as e:
             print(f"Please try again {e}")
+
+def not_number_rejector_2(message):
+    """Ask for a number repeatedly until actually given one.
+
+    Ask for a number, and if the response is actually NOT a number
+    (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
+    When you do get a number, return it.
+    """
+    while True:
+        try:
+            x = int(input("Guess a number: "))
+        except Exception as e:
+            print(f"Please try again {e}")
+            continue
+        else:
+            return x
             
 
 def advancedGuessingGame():
@@ -70,8 +86,9 @@ def advancedGuessingGame():
     
     guessed = False
 
+        
     while not guessed:
-        guessed_number = int(input("Guess a number: "))
+        guessed_number = not_number_rejector_2("Guess a number: ")
         print(f"You guessed {guessed_number},")
         if guessed_number == actualNumber:
             print(f"You got it!! It was {actualNumber}!")
