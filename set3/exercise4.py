@@ -2,10 +2,12 @@
 """Set 3, Exercise 4."""
 
 
+
 import math
+import random
+
 
 # import time
-
 
 def binary_search(low, high, actual_number):
     """Do a binary search.
@@ -25,7 +27,20 @@ def binary_search(low, high, actual_number):
     things much easier.
     """
     tries = 0
-    guess = 0
+    guess = 0   
+    
+    while low < high:
+        mid_point = (low + high) // 2
+        guess = mid_point
+        if guess == actual_number:
+            return guess("The computer got it!")
+        elif actual_number < mid_point:
+            high = mid_point - 1
+        else:
+            low = mid_point + 1
+        i = tries
+        i += 1
+       
 
     # Write your code in here
 
