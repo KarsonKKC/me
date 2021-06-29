@@ -32,14 +32,12 @@ def binary_search(low, high, actual_number):
         mid_point = (low + high) // 2
         guess = mid_point
         if guess == actual_number:
-            tries += 1
             break
         elif guess < actual_number:
             low = guess + 1
-            tries += 1
         else:
             high = guess - 1
-            tries += 1
+    tries += 1
 
     return {"guess": guess, "tries": tries}
 
