@@ -83,21 +83,18 @@ def advancedGuessingGame():
     print(f"OK then, a number between {low_number} and {high_number} ?")
 
     actualNumber = random.randint(low_number, high_number)
-    
-    guessed = False
-
-        
-    while not guessed:
+     
+    while True:
         guessed_number = not_number_rejector_2("Guess a number: ")
         print(f"You guessed {guessed_number},")
         if guessed_number == actualNumber:
             print(f"You got it!! It was {actualNumber}!")
-            guessed = True
+            return "You got it!"
         elif guessed_number < actualNumber:
             print("Too small, try again!")
         else:
             print("Too big, try again!")
-    return "You got it!"
+   
     # the tests are looking for the exact string "You got it!". Don't modify that!
 
 
