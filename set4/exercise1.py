@@ -164,14 +164,21 @@ def diarist():
     with open("set4/Trispokedovetiles(laser).gcode", mode, encoding="utf-8") as gc:
         lines = gc.readlines()
 
-    for line in lines:
-        if lines[:2] == "M10":
-            count += 1
-            print(line)
-        else:
-            if lines[:2] == "M11":
+        for line in lines:
+            if "M10" in line:
                 count += 1
-        print(count)
+    """    
+    
+    name = "laser.pew.txt"
+    save = open("../set4/laser.pew.txt", mode)
+    save.write(name + str(count))
+    return count
+    """
+    mode = "w"
+    with open("set4/lasers.pew.txt", mode, encoding="utf-8") as save:
+        save.write(str(count))
+        print(save)
+    return save
 
 
 if __name__ == "__main__":
