@@ -3,10 +3,13 @@
 
 import json
 import os
+from typing import Counter
 import urllib
 import requests
 import inspect
 import sys
+
+from requests.models import Response
 
 # Handy constants
 LOCAL = os.path.dirname(os.path.realpath(__file__))  # the context of this file
@@ -154,8 +157,21 @@ def diarist():
     TIP: remember to commit 'lasers.pew' and push it to your repo, otherwise
          the test will have nothing to look at.
     TIP: this might come in handy if you need to hack a 3d print file in the future.
+    readlines
     """
-    pass
+    mode = "r"
+    count = 0
+    with open("set4/Trispokedovetiles(laser).gcode", mode, encoding="utf-8") as gc:
+        lines = gc.readlines()
+
+    for line in lines:
+        if lines[:2] == "M10":
+            count += 1
+            print(line)
+        else:
+            if lines[:2] == "M11":
+                count += 1
+        print(count)
 
 
 if __name__ == "__main__":
