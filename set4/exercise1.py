@@ -176,9 +176,10 @@ def diarist():
     """
     mode = "w"
     with open("set4/lasers.pew.txt", mode, encoding="utf-8") as save:
-        save.write(str(count))
-        print(save)
-    return save
+        saving = save.write(str(count))
+        for line in saving:
+            print(saving)
+    return saving
 
 
 if __name__ == "__main__":
