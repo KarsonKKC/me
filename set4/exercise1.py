@@ -175,11 +175,11 @@ def diarist():
     return count
     """
     mode = "w"
-    with open("set4/lasers.pew.txt", mode, encoding="utf-8") as save:
+    with open("set4/lasers.pew", mode, encoding="utf-8") as save:
         saving = save.write(str(count))
         for line in saving:
             print(saving)
-    return saving
+        return saving
 
 
 if __name__ == "__main__":
