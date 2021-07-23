@@ -111,7 +111,15 @@ def fizz_buzz() -> List:
     """
     fizz_buzz_list = []
     # your code here
-
+    for i in range(1, 101):
+        if i % 3 is 0 and i % 5 is 0:
+            fizz_buzz_list.append("FizzBuzz")
+        elif i % 3 is 0:
+            fizz_buzz_list.append("Fizz")
+        elif i % 5 is 0:
+            fizz_buzz_list.append("Buzz")
+        else:
+            fizz_buzz_list.append(i)
     return fizz_buzz_list
 
 
@@ -146,7 +154,9 @@ def pet_filter(letter="a") -> List:
     ]
     # fmt: on
     filtered = []
-
+    for letter_a in pets:
+        if letter in letter_a:
+            filtered.append(letter_a)
     return filtered
 
 
@@ -161,8 +171,13 @@ def best_letter_for_pets() -> str:
     import string
 
     the_alphabet = string.ascii_lowercase
-    most_popular_letter = ""
-
+    most_popular_letter = "🤷‍♀️🤷‍♀️🤷‍♀️🤷‍♀️🤷‍♀️🤷‍♀️🤷‍♀️🤷‍♀️🤷‍♀️🤷‍♀️🤷‍♀️🤷‍♀️🤷‍♀️🤷‍♀️"
+    longest_petname = 0
+    for the_letters in the_alphabet:
+        lengh = len(pet_filter(the_letters))
+        if lengh > longest_petname:
+            longest_petname = lengh
+            most_popular_letter = the_letters
     return most_popular_letter
 
 
@@ -190,10 +205,13 @@ def make_filler_text_dictionary() -> Dict:
     (i.e. 3, 4, 5, 6, 7 and 4 words for each)
     TIP: you'll need the requests library
     """
-
     url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength="
     wd = {}
-
+    for x in range(3, 8):
+        wd[x] = []
+        for i in range(4):
+            r = requests.get(url + str(x))
+            wd[x].append(r.text)
     return wd
 
 
@@ -211,6 +229,10 @@ def random_filler_text(number_of_words=200) -> str:
     my_dict = make_filler_text_dictionary()
 
     words = []
+    for i in range(number_of_words):
+        lengh = random.randint(3, 7)
+        index = random.randint(0, 3)
+        words.append(my_dict[lengh][index])
 
     return " ".join(words)
 
