@@ -174,7 +174,7 @@ def best_letter_for_pets() -> str:
     most_popular_letter = "🤷‍♀️🤷‍♀️🤷‍♀️🤷‍♀️🤷‍♀️🤷‍♀️🤷‍♀️🤷‍♀️🤷‍♀️🤷‍♀️🤷‍♀️🤷‍♀️🤷‍♀️🤷‍♀️"
     longest_petname = 0
     for the_letters in the_alphabet:
-        lengh = len(pet_filter(the_letters))
+        lengh = int(len(pet_filter(the_letters)))
         if lengh > longest_petname:
             longest_petname = lengh
             most_popular_letter = the_letters
